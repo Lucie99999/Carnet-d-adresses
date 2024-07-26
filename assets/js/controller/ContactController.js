@@ -1,8 +1,7 @@
-let contacts = [];
+let listContacts = [];
 const nom = prompt("Quel est votre nom ?");
 const prenom = prompt("Quel est votre prenom ?");
 const telephone = prompt("Quel est votre numéro de téléphone?");
-console.log(nom, prenom, telephone);
 
 import {Contact} from "assets/js/models/Contact.js";
 
@@ -13,7 +12,7 @@ function ajouterContact(nom, prenom, telephone) {
      * @type {Contact}
      */
     const new_contact=new Contact(nom, prenom, telephone);
-
+    listContacts.push(new_contact);
 }
 
 ajouterContact(nom, prenom, telephone);
