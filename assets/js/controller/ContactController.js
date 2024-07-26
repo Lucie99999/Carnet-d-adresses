@@ -8,23 +8,29 @@ import {Contact} from "assets/js/models/Contact.js";
 function ajouterContact(nom, prenom, telephone) {
 
     /**
-     * new_contact est une instance de Contact.
+     * newContact est une instance de Contact.
      * @type {Contact}
      */
-    const new_contact=new Contact(nom, prenom, telephone);
-    listContacts.push(new_contact);
+    const newContact=new Contact(nom, prenom, telephone);
+    listContacts.push(newContact);
 }
 
-ajouterContact(nom, prenom, telephone);
+//ajouterContact(nom, prenom, telephone);
 
 function afficherContacts(){
-    //à compléter
+    for (let i=0; i<listContacts.length; i++) {
+        console.log("Contact n°"+i+":"+listContacts[i]);
+    }
 }
 
 function rechercherContact(nom){
-
+    for (let i=0; i<listContacts.length; i++) {
+        if ((listContacts[i].nom==nom)||(listContacts[i].prenom==nom)){
+            console.log(listContacts[i]);
+        }
+    }
 }
 
 function supprimerContact(index){
-
+   listContacts.splice(index,1);
 }
